@@ -23,6 +23,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.onlineclass.ui.theme.OnlineClassTheme
@@ -43,6 +46,13 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+// poppins font
+val poppins = FontFamily(
+    Font(R.font.poppins_regular, FontWeight.Normal),
+    Font(R.font.poppins_medium, FontWeight.Medium),
+    Font(R.font.poppins_light, FontWeight.Light)
+)
 
 @Composable
 fun OnlineClassApp() {
@@ -76,6 +86,11 @@ fun OnlineClassApp() {
                 Modifier.weight(1f)
             )
         }
+
+        Spacer(Modifier.height(10.dp))
+
+        // row Hello
+
     }
 }
 
