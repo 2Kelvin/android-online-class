@@ -122,63 +122,71 @@ fun OnlineClassApp() {
         Spacer(Modifier.height(10.dp))
 
         // row History
-        Row(
-            Modifier
-                .background(Color(0XFFE3E4E5))
-                .padding(all = 5.dp)
-                .clip(RoundedCornerShape(20))
-                .height(200.dp)
-                .fillMaxWidth()
-        ) {
-            Column(Modifier.weight(1f)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        imageVector = Icons.Rounded.Favorite,
-                        contentDescription = null,
-                        Modifier.weight(1f)
-                    )
-
-                    Column(Modifier.weight(2f)) {
-                        Text(
-                            text = "History",
-                            fontFamily = poppins
+        Row(Modifier.fillMaxWidth()) {
+            Card(
+                elevation = 4.dp,
+                shape = RoundedCornerShape(20),
+                modifier = Modifier
+                    .padding(all = 5.dp)
+                    .height(130.dp),
+                backgroundColor = Color(0XFFE3E5E4)
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Rounded.Favorite,
+                            contentDescription = null,
+                            Modifier.weight(1f)
                         )
+
+                        Column(Modifier.weight(4f)) {
+                            Text(
+                                text = "History",
+                                fontFamily = poppins
+                            )
+                            Text(
+                                text = "8:00 - 8:45",
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.Light
+                            )
+                        }
+                    }
+                    Spacer(Modifier.height(10.dp))
+                    Row(
+                        Modifier
+                            .background(Color.Black)
+                            .height(40.dp)
+                            .width(105.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.Star,
+                            contentDescription = null,
+//                        Modifier.weight(1f),
+                            tint = Color.White
+                        )
+                        Spacer(modifier = Modifier.width(7.dp))
+                        Column {
+                            Divider(
+                                Modifier
+                                    .height(20.dp)
+                                    .width(2.dp),
+                                Color.White
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(7.dp))
                         Text(
-                            text = "8:00 - 8:45",
+                            text = "Join Now",
                             fontFamily = poppins,
-                            fontWeight = FontWeight.Light
+                            modifier = Modifier.weight(1f),
+                            color = Color.White,
+                            fontSize = 13.sp
                         )
                     }
                 }
-                Spacer(Modifier.height(10.dp))
-                Row(
-                    Modifier
-                        .background(Color.Black)
-                        .height(40.dp)
-                        .width(150.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Star,
-                        contentDescription = null,
-//                        Modifier.weight(1f),
-                        tint = Color.White
-                    )
-//                    Divider(
-//                        Modifier.height(10.dp),
-//                        Color.White
-//                    )
-                    Text(
-                        text = "Join Now",
-                        fontFamily = poppins,
-                        modifier = Modifier.weight(1f),
-                        color = Color.White,
+                Column(Modifier.weight(1f)) {
 
-                    )
                 }
-            }
-            Column(Modifier.weight(1f)) {
-
             }
         }
     }
