@@ -15,6 +15,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.Star
+import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -59,7 +60,7 @@ fun OnlineClassApp() {
     Column(
         Modifier
             .fillMaxSize()
-            .padding(all = 5.dp)
+            .padding(all = 10.dp)
             .background(Color.White)
     ) {
         // first row with profile pic
@@ -121,74 +122,104 @@ fun OnlineClassApp() {
 
         Spacer(Modifier.height(10.dp))
 
-        // row History
-        Row(Modifier.fillMaxWidth()) {
-            Card(
-                elevation = 4.dp,
-                shape = RoundedCornerShape(20),
-                modifier = Modifier
-                    .padding(all = 5.dp)
-                    .height(130.dp),
-                backgroundColor = Color(0XFFE3E5E4)
-            ) {
+        // row Card
+        Card(
+            elevation = 4.dp,
+            shape = RoundedCornerShape(10),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(140.dp),
+            backgroundColor = Color(0XFFE3E5E4)
+        ) {
+            Row(Modifier.fillMaxWidth()) {
                 Column(Modifier.weight(1f)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(start = 10.dp, top = 10.dp)
+                    ) {
                         Icon(
                             imageVector = Icons.Rounded.Favorite,
                             contentDescription = null,
-                            Modifier.weight(1f)
+                            Modifier
+                                .padding(top = 10.dp, bottom = 10.dp, end = 10.dp)
                         )
 
-                        Column(Modifier.weight(4f)) {
+                        Column(Modifier.weight(1f)) {
                             Text(
                                 text = "History",
-                                fontFamily = poppins
+                                fontFamily = poppins,
+                                fontSize = 20.sp
                             )
                             Text(
                                 text = "8:00 - 8:45",
                                 fontFamily = poppins,
-                                fontWeight = FontWeight.Light
+                                fontWeight = FontWeight.Light,
+                                fontSize = 12.sp
                             )
                         }
                     }
-                    Spacer(Modifier.height(10.dp))
-                    Row(
-                        Modifier
-                            .background(Color.Black)
+
+                    Spacer(Modifier.height(20.dp))
+
+                    // join now
+                    Card(
+                        modifier = Modifier
                             .height(40.dp)
-                            .width(105.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                            .padding(start = 10.dp)
+                            .width(106.dp),
+                        backgroundColor = Color.Black,
+                        shape = RoundedCornerShape(15)
                     ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Star,
-                            contentDescription = null,
-//                        Modifier.weight(1f),
-                            tint = Color.White
-                        )
-                        Spacer(modifier = Modifier.width(7.dp))
-                        Column {
-                            Divider(
-                                Modifier
-                                    .height(20.dp)
-                                    .width(2.dp),
-                                Color.White
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.padding(start = 2.dp, end = 2.dp)
+                            ) {
+                            Icon(
+                                imageVector = Icons.Outlined.Star,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier.size(19.dp)
+                            )
+
+                            Spacer(modifier = Modifier.width(7.dp))
+
+                            Column {
+                                Divider(
+                                    Modifier
+                                        .height(20.dp)
+                                        .width(2.dp),
+                                    Color.White
+                                )
+                            }
+
+                            Spacer(modifier = Modifier.width(7.dp))
+
+                            Text(
+                                text = "Join Now",
+                                fontFamily = poppins,
+                                modifier = Modifier.weight(1f),
+                                color = Color.White,
+                                fontSize = 13.sp
                             )
                         }
-                        Spacer(modifier = Modifier.width(7.dp))
-                        Text(
-                            text = "Join Now",
-                            fontFamily = poppins,
-                            modifier = Modifier.weight(1f),
-                            color = Color.White,
-                            fontSize = 13.sp
-                        )
                     }
                 }
-                Column(Modifier.weight(1f)) {
-
+                Column(
+                    Modifier
+                        .weight(1f)
+                        .fillMaxHeight(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Icon(
+                        imageVector = Icons.Rounded.Email,
+                        contentDescription = null,
+                        Modifier.size(65.dp)
+                    )
                 }
             }
         }
+
     }
 }
 
