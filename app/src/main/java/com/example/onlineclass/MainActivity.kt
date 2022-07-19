@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -68,12 +69,13 @@ fun OnlineClassApp() {
             Modifier
                 .fillMaxWidth()
                 .padding(top = 10.dp),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
                 imageVector = Icons.Outlined.Home,
                 contentDescription = null,
-                Modifier.weight(1f)
+                //Modifier.weight(1f)
             )
             Image(
                 painter = painterResource(R.drawable.img),
@@ -86,7 +88,7 @@ fun OnlineClassApp() {
             Icon(
                 imageVector = Icons.Outlined.Search,
                 contentDescription = null,
-                Modifier.weight(1f)
+                //Modifier.weight(1f)
             )
         }
 
@@ -233,6 +235,17 @@ fun OnlineClassApp() {
                 fontSize = 13.sp,
                 modifier = Modifier.weight(1f)
             )
+        }
+
+        // purple-pink section
+        Card(
+            backgroundColor = Color.Yellow,
+            modifier = Modifier
+                .height(220.dp)
+                .fillMaxWidth(),
+            shape = RoundedCornerShape(10)
+        ) {
+            // content
         }
     }
 }
