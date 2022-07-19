@@ -60,7 +60,7 @@ fun OnlineClassApp() {
     Column(
         Modifier
             .fillMaxSize()
-            .padding(all = 10.dp)
+            .padding(start = 10.dp, end = 10.dp)
             .background(Color.White)
     ) {
         // first row with profile pic
@@ -108,15 +108,13 @@ fun OnlineClassApp() {
                 text = "Classes",
                 fontFamily = poppins,
                 fontWeight = FontWeight.Light,
-                modifier = Modifier.weight(2f),
-//                color = Color(0XFFE3E5E4)
+                modifier = Modifier.weight(2f)
             )
             Text(
                 text = "2 classes today",
                 fontFamily = poppins,
                 fontWeight = FontWeight.Light,
-                modifier = Modifier.weight(1f),
-//                color = Color(0XFFE3E5E4)
+                modifier = Modifier.weight(1f)
             )
         }
 
@@ -220,6 +218,22 @@ fun OnlineClassApp() {
             }
         }
 
+        // homeworks section
+        Row(
+            Modifier.padding(top = 30.dp, bottom = 10.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Home Work",
+                fontSize = 20.sp,
+                modifier = Modifier.weight(1f)
+            )
+            Text(
+                text = "View All",
+                fontSize = 13.sp,
+                modifier = Modifier.weight(1f)
+            )
+        }
     }
 }
 
