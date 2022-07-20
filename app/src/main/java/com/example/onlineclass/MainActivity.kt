@@ -20,9 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -74,11 +77,11 @@ fun OnlineClassApp() {
                 Modifier.size(32.dp)
             )
             Image(
-                painter = painterResource(R.drawable.img),
+                painter = painterResource(R.drawable.keri),
                 contentDescription = "Profile",
                 Modifier
-                    .width(45.dp)
-                    .height(45.dp)
+                    .width(50.dp)
+                    .height(50.dp)
                     .clip(RoundedCornerShape(50)) // image rounded corners
             )
             Icon(
@@ -92,7 +95,16 @@ fun OnlineClassApp() {
 
         // heading Hello
         Text(
-            text = "Hello, Jessica",
+            text = buildAnnotatedString {
+                append("Hello, ")
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.Medium
+                    )
+                ) {
+                    append("Keri")
+                }
+            },
             fontSize = 40.sp,
             fontFamily = poppins
         )
@@ -216,10 +228,11 @@ fun OnlineClassApp() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Icon(
-                        imageVector = Icons.Rounded.Email,
+                    Image(
+                        painter = painterResource(id = R.drawable.hist),
                         contentDescription = null,
-                        Modifier.size(65.dp)
+                        modifier = Modifier
+                            .size(150.dp)
                     )
                 }
             }
@@ -235,11 +248,15 @@ fun OnlineClassApp() {
         ) {
             Text(
                 text = "Home Work",
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                fontFamily = poppins,
+                fontWeight = FontWeight.Light
             )
             Text(
                 text = "View All",
-                fontSize = 13.sp
+                fontSize = 13.sp,
+                fontFamily = poppins,
+                fontWeight = FontWeight.Light
             )
         }
 
@@ -285,10 +302,16 @@ fun OnlineClassApp() {
                         }
                     }
                     Column {
-                        Icon(
-                            imageVector = Icons.Rounded.Menu,
-                            contentDescription = null
-                        )
+                        Card(
+                            backgroundColor = Color(0XFFFFC7D4),
+                            shape = RoundedCornerShape(20)
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.pile),
+                                contentDescription = null,
+                                modifier = Modifier.size(60.dp)
+                            )
+                        }
                     }
                 }
                 
