@@ -1,20 +1,16 @@
 package com.example.onlineclass
 
 import android.os.Bundle
-import android.view.RoundedCorner
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
-import androidx.compose.material.icons.rounded.AccountBox
 import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.Menu
@@ -23,12 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -70,13 +64,14 @@ fun OnlineClassApp() {
         Row(
             Modifier
                 .fillMaxWidth()
-                .padding(top = 10.dp),
+                .padding(top = 30.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
                 imageVector = Icons.Outlined.Home,
-                contentDescription = null
+                contentDescription = null,
+                Modifier.size(32.dp)
             )
             Image(
                 painter = painterResource(R.drawable.img),
@@ -88,21 +83,21 @@ fun OnlineClassApp() {
             )
             Icon(
                 imageVector = Icons.Outlined.Search,
-                contentDescription = null
+                contentDescription = null,
+                Modifier.size(32.dp)
             )
         }
 
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(20.dp))
 
         // heading Hello
         Text(
             text = "Hello, Jessica",
             fontSize = 40.sp,
-            modifier = Modifier.padding(top = 5.dp, bottom = 5.dp),
             fontFamily = poppins
         )
 
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(20.dp))
 
         // row classes
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -120,7 +115,7 @@ fun OnlineClassApp() {
             )
         }
 
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(15.dp))
 
         // row Card
         Card(
@@ -143,7 +138,7 @@ fun OnlineClassApp() {
                     ) {
                         Card(
                             shape = CircleShape,
-                            backgroundColor = Color(0XFFE4E6E5)
+                            backgroundColor = Color(0XFFD0D8D3)
                         ) {
                             Icon(
                                 imageVector = Icons.Rounded.Favorite,
@@ -265,7 +260,7 @@ fun OnlineClassApp() {
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Column() {
+                    Column {
                         Text(
                             text = "Physics",
                             fontFamily = poppins,
@@ -289,7 +284,7 @@ fun OnlineClassApp() {
                             )
                         }
                     }
-                    Column() {
+                    Column {
                         Icon(
                             imageVector = Icons.Rounded.Menu,
                             contentDescription = null
@@ -304,7 +299,7 @@ fun OnlineClassApp() {
                     Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Column() {
+                    Column {
                         Text(
                             text = "Newton's Law of Motion",
                             fontFamily = poppins,
