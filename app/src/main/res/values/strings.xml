@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Online Class</string>
+    <string name="profile_picture">Profile</string>
+    <string name="hello">Hello, "</string>
+    <string name="keri">Keri</string>
+    <string name="classes">Classes</string>
+    <string name="classes_no">2 classes today</string>
+    <string name="history">History</string>
+    <string name="history_schedule">8:00 - 8:45</string>
+    <string name="homework">Home Work</string>
+    <string name="physics">Physics</string>
+    <string name="days_left">2 days left</string>
+    <string name="newton_law">Newton\'s Law of Motion</string>
+    <string name="read">Read Screens 1.1 - 1.12</string>
+    <string name="view_all">View All</string>
 </resources>

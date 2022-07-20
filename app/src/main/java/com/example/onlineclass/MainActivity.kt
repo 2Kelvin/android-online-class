@@ -11,16 +11,15 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Favorite
-import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
@@ -73,22 +72,24 @@ fun OnlineClassApp() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
-                painter = painterResource(R.drawable.frequency),
+                imageVector = Icons.Outlined.Menu,
                 contentDescription = null,
-                Modifier.size(45.dp).alpha(0.9f)
+                Modifier
+                    .size(40.dp)
+                    .alpha(0.9f)
             )
             Image(
                 painter = painterResource(R.drawable.pic),
-                contentDescription = "Profile",
+                contentDescription = stringResource(R.string.profile_picture),
                 Modifier
                     .size(55.dp)
                     .clip(RoundedCornerShape(50)) // image rounded corners
             )
             Icon(
-                painter = painterResource(R.drawable.search),
+                imageVector = Icons.Outlined.Search,
                 contentDescription = null,
                 Modifier
-                    .size(45.dp)
+                    .size(40.dp)
                     .alpha(0.9f) //transparency / opacity effect
             )
         }
@@ -98,36 +99,37 @@ fun OnlineClassApp() {
         // heading Hello
         Text(
             text = buildAnnotatedString {
-                append("Hello, ")
+                append(stringResource(R.string.hello))
                 withStyle(
                     style = SpanStyle(
                         fontWeight = FontWeight.Medium
                     )
                 ) {
-                    append("Keri")
+                    append(stringResource(R.string.keri))
                 }
             },
             fontSize = 40.sp,
             fontFamily = poppins
         )
 
-        Spacer(Modifier.height(40.dp))
+        Spacer(Modifier.height(30.dp))
 
         // row classes
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = "Classes",
+                text = stringResource(R.string.classes),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier.weight(2f),
-                color = Color(0XFF8C8C8C)
+                color = colorResource(R.color.fade_text),
+                fontSize = 20.sp
             )
             Text(
-                text = "2 classes today",
+                text = stringResource(R.string.classes_no),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Light,
                 modifier = Modifier.weight(1f),
-                color = Color(0XFF8C8C8C)
+                color = colorResource(R.color.fade_text)
             )
         }
 
@@ -140,7 +142,7 @@ fun OnlineClassApp() {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(160.dp),
-            backgroundColor = Color(0XFFE3E5E4)
+            backgroundColor = colorResource(R.color.bg_tile)
         ) {
             Row(
                 Modifier
@@ -154,7 +156,7 @@ fun OnlineClassApp() {
                     ) {
                         Card(
                             shape = CircleShape,
-                            backgroundColor = Color(0XFFD0D8D3)
+                            backgroundColor = colorResource(R.color.dark_bg_tile)
                         ) {
                             Icon(
                                 painter = painterResource(R.drawable.archer),
@@ -169,16 +171,16 @@ fun OnlineClassApp() {
 
                         Column(Modifier.weight(1f)) {
                             Text(
-                                text = "History",
+                                text = stringResource(R.string.history),
                                 fontFamily = poppins,
                                 fontSize = 20.sp
                             )
                             Text(
-                                text = "8:00 - 8:45",
+                                text = stringResource(R.string.history_schedule),
                                 fontFamily = poppins,
                                 fontWeight = FontWeight.Light,
                                 fontSize = 12.sp,
-                                color = Color(0XFF8C8C8C)
+                                color = colorResource(R.color.fade_text)
                             )
                         }
                     }
@@ -200,7 +202,7 @@ fun OnlineClassApp() {
                             Icon(
                                 painter = painterResource(R.drawable.video_call),
                                 contentDescription = null,
-                                tint = Color(0XFFDDDDDD),
+                                tint = colorResource(R.color.video_white),
                                 modifier = Modifier.size(17.dp)
                             )
 
@@ -211,7 +213,7 @@ fun OnlineClassApp() {
                                     Modifier
                                         .height(14.dp)
                                         .width(1.dp),
-                                    Color(0XFFAAAAAA)
+                                    colorResource(R.color.divider_white)
                                 )
                             }
 
@@ -221,7 +223,7 @@ fun OnlineClassApp() {
                                 text = "Join Now",
                                 fontFamily = poppins,
                                 modifier = Modifier.weight(1f),
-                                color = Color(0XFFDDDDDD),
+                                color = colorResource(R.color.video_white),
                                 fontSize = 13.sp
                             )
                         }
@@ -254,24 +256,23 @@ fun OnlineClassApp() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Home Work",
+                text = stringResource(R.string.homework),
                 fontSize = 20.sp,
                 fontFamily = poppins,
                 fontWeight = FontWeight.Medium,
-                color = Color(0XFF8C8C8C)
+                color = colorResource(R.color.fade_text)
             )
             Text(
-                text = "View All",
-                fontSize = 13.sp,
+                text = stringResource(R.string.view_all),
                 fontFamily = poppins,
                 fontWeight = FontWeight.Light,
-                color = Color(0XFF8C8C8C)
+                color = colorResource(R.color.fade_text)
             )
         }
 
-        // purple-pink section
+        // pink card
         Card(
-            backgroundColor = Color(0XFFFFD2DD),
+            backgroundColor = colorResource(R.color.pink_card),
             modifier = Modifier
                 .height(200.dp)
                 .fillMaxWidth(),
@@ -288,13 +289,13 @@ fun OnlineClassApp() {
                 ) {
                     Column {
                         Text(
-                            text = "Physics",
+                            text = stringResource(R.string.physics),
                             fontFamily = poppins,
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Medium
                         )
                         Row(
-                            modifier = Modifier.width(85.dp),
+                            modifier = Modifier.width(70.dp),
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
@@ -304,20 +305,20 @@ fun OnlineClassApp() {
                                 Modifier
                                     .size(18.dp)
                                     .padding(end = 2.dp),
-                                tint = Color(0XFF8C8C8C)
+                                tint = colorResource(R.color.fade_text)
                             )
                             Text(
-                                text = "2 days left",
+                                text = stringResource(R.string.days_left),
                                 fontFamily = poppins,
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.Light,
-                                color = Color(0XFF8C8C8C)
+                                color = colorResource(R.color.fade_text)
                             )
                         }
                     }
                     Column {
                         Card(
-                            backgroundColor = Color(0XFFFFC7D4),
+                            backgroundColor = colorResource(R.color.dark_pink),
                             shape = RoundedCornerShape(20)
                         ) {
                             Image(
@@ -339,24 +340,24 @@ fun OnlineClassApp() {
                 ) {
                     Column {
                         Text(
-                            text = "Newton's Law of Motion",
+                            text = stringResource(R.string.newton_law),
                             fontFamily = poppins,
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Medium
                         )
                         Text(
-                            text = "Read Screens 1.1 - 1.12",
+                            text = stringResource(R.string.read),
                             fontFamily = poppins,
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Light,
-                            color = Color(0XFF8C8C8C)
+                            color = colorResource(R.color.fade_text)
                         )
                     }
                     Column {
                         Icon(
                             imageVector = Icons.Outlined.Warning,
                             contentDescription = null,
-                            tint = Color(0XFFD3A2AF)
+                            tint = colorResource(R.color.icon_pink)
                         )
                     }
                 }

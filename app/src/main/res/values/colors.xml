@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="fade_text">#FF8C8C8C</color>
+    <color name="bg_tile">#FFE3E5E4</color>
+    <color name="dark_bg_tile">#FFD0D8D3</color>
+    <color name="video_white">#FFDDDDDD</color>
+    <color name="divider_white">#FFAAAAAA</color>
+    <color name="pink_card">#FFFFD2DD</color>
+    <color name="dark_pink">#FFFFC7D4</color>
+    <color name="icon_pink">#FFD3A2AF</color>
 </resources>
