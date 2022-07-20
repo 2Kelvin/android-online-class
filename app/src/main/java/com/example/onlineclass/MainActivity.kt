@@ -17,6 +17,7 @@ import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -60,7 +61,7 @@ fun OnlineClassApp() {
     Column(
         Modifier
             .fillMaxSize()
-            .padding(start = 10.dp, end = 10.dp)
+            .padding(start = 15.dp, end = 15.dp)
             .background(Color.White)
     ) {
         // first row with profile pic
@@ -72,26 +73,27 @@ fun OnlineClassApp() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
-                imageVector = Icons.Outlined.Home,
+                painter = painterResource(R.drawable.frequency),
                 contentDescription = null,
-                Modifier.size(32.dp)
+                Modifier.size(45.dp).alpha(0.9f)
             )
             Image(
-                painter = painterResource(R.drawable.keri),
+                painter = painterResource(R.drawable.pic),
                 contentDescription = "Profile",
                 Modifier
-                    .width(50.dp)
-                    .height(50.dp)
+                    .size(55.dp)
                     .clip(RoundedCornerShape(50)) // image rounded corners
             )
             Icon(
-                imageVector = Icons.Outlined.Search,
+                painter = painterResource(R.drawable.search),
                 contentDescription = null,
-                Modifier.size(32.dp)
+                Modifier
+                    .size(45.dp)
+                    .alpha(0.9f) //transparency / opacity effect
             )
         }
 
-        Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(40.dp))
 
         // heading Hello
         Text(
@@ -109,21 +111,23 @@ fun OnlineClassApp() {
             fontFamily = poppins
         )
 
-        Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(40.dp))
 
         // row classes
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = "Classes",
                 fontFamily = poppins,
-                fontWeight = FontWeight.Light,
-                modifier = Modifier.weight(2f)
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.weight(2f),
+                color = Color(0XFF8C8C8C)
             )
             Text(
                 text = "2 classes today",
                 fontFamily = poppins,
                 fontWeight = FontWeight.Light,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                color = Color(0XFF8C8C8C)
             )
         }
 
@@ -153,9 +157,11 @@ fun OnlineClassApp() {
                             backgroundColor = Color(0XFFD0D8D3)
                         ) {
                             Icon(
-                                imageVector = Icons.Rounded.Favorite,
+                                painter = painterResource(R.drawable.archer),
                                 contentDescription = null,
-                                modifier = Modifier.padding(15.dp)
+                                modifier = Modifier
+                                    .padding(15.dp)
+                                    .size(25.dp)
                             )
                         }
                         
@@ -171,7 +177,8 @@ fun OnlineClassApp() {
                                 text = "8:00 - 8:45",
                                 fontFamily = poppins,
                                 fontWeight = FontWeight.Light,
-                                fontSize = 12.sp
+                                fontSize = 12.sp,
+                                color = Color(0XFF8C8C8C)
                             )
                         }
                     }
@@ -181,34 +188,34 @@ fun OnlineClassApp() {
                     // join now
                     Card(
                         modifier = Modifier
-                            .height(30.dp)
-                            .width(106.dp),
+                            .height(21.dp)
+                            .width(88.dp),
                         backgroundColor = Color.Black,
-                        shape = RoundedCornerShape(15)
+                        shape = RoundedCornerShape(25)
                     ) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.padding(start = 2.dp, end = 2.dp)
+                            modifier = Modifier.padding(start = 2.dp)
                             ) {
                             Icon(
-                                imageVector = Icons.Outlined.Star,
+                                painter = painterResource(R.drawable.video_call),
                                 contentDescription = null,
                                 tint = Color(0XFFDDDDDD),
-                                modifier = Modifier.size(19.dp)
+                                modifier = Modifier.size(17.dp)
                             )
 
-                            Spacer(modifier = Modifier.width(7.dp))
+                            Spacer(modifier = Modifier.width(5.dp))
 
                             Column {
                                 Divider(
                                     Modifier
-                                        .height(20.dp)
+                                        .height(14.dp)
                                         .width(1.dp),
                                     Color(0XFFAAAAAA)
                                 )
                             }
 
-                            Spacer(modifier = Modifier.width(7.dp))
+                            Spacer(modifier = Modifier.width(5.dp))
 
                             Text(
                                 text = "Join Now",
@@ -250,13 +257,15 @@ fun OnlineClassApp() {
                 text = "Home Work",
                 fontSize = 20.sp,
                 fontFamily = poppins,
-                fontWeight = FontWeight.Light
+                fontWeight = FontWeight.Medium,
+                color = Color(0XFF8C8C8C)
             )
             Text(
                 text = "View All",
                 fontSize = 13.sp,
                 fontFamily = poppins,
-                fontWeight = FontWeight.Light
+                fontWeight = FontWeight.Light,
+                color = Color(0XFF8C8C8C)
             )
         }
 
@@ -281,23 +290,28 @@ fun OnlineClassApp() {
                         Text(
                             text = "Physics",
                             fontFamily = poppins,
-                            fontSize = 20.sp
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Medium
                         )
                         Row(
+                            modifier = Modifier.width(85.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Icon(
-                                imageVector = Icons.Outlined.Notifications,
+                                painter = painterResource(R.drawable.time),
                                 contentDescription = null,
                                 Modifier
                                     .size(18.dp)
-                                    .padding(end = 2.dp)
+                                    .padding(end = 2.dp),
+                                tint = Color(0XFF8C8C8C)
                             )
                             Text(
                                 text = "2 days left",
                                 fontFamily = poppins,
                                 fontSize = 12.sp,
-                                fontWeight = FontWeight.Light
+                                fontWeight = FontWeight.Light,
+                                color = Color(0XFF8C8C8C)
                             )
                         }
                     }
@@ -320,24 +334,29 @@ fun OnlineClassApp() {
                 //Newtons Row haha...get it??
                 Row(
                     Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column {
                         Text(
                             text = "Newton's Law of Motion",
                             fontFamily = poppins,
-                            fontSize = 20.sp
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Medium
                         )
                         Text(
                             text = "Read Screens 1.1 - 1.12",
                             fontFamily = poppins,
                             fontSize = 12.sp,
-                            fontWeight = FontWeight.Light
+                            fontWeight = FontWeight.Light,
+                            color = Color(0XFF8C8C8C)
                         )
                     }
                     Column {
                         Icon(
-                            imageVector = Icons.Outlined.Warning, contentDescription = null
+                            imageVector = Icons.Outlined.Warning,
+                            contentDescription = null,
+                            tint = Color(0XFFD3A2AF)
                         )
                     }
                 }
